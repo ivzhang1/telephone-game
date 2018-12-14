@@ -19,11 +19,9 @@ union semun {
 };
 
 int main(int argc, char *argv[]){
-	char input[4];
-
-	fgets(input,3,stdin);
-	input[4] = '\0';
-	int key = ftok("control.c", 'R');
+	char *input = argv[1];
+	//printf("%s,%s \n", input, argv[1]);
+      	int key = ftok("control.c", 'R');
 	int shmid, semid;
 	char *data;
 	union semun su;
