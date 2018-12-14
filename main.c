@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
 	stat("story.txt", &file);
 	int size = file.st_size;
 	char store[size];
-	int read_file = open("story.txt", O_RDWR, O_APPEND);
+	int read_file = open("story.txt", O_RDWR | O_APPEND);
 	read(read_file, store, size);
 
 	if(*data){
