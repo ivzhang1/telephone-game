@@ -1,14 +1,14 @@
-all: main.o control.o headings.h
-	gcc main.o control.o
+main_runner: main.c headings.h
+	gcc main.c -o main_runner
 
-main.o: main.c headings.h
-	gcc -c -g main.c
+control_runner: control.c headings.h
+	gcc control.c -o control_runner
 
-control.o: control.c headings.h
-	gcc -c -g control.c
+run_main:main_runner
+	./main_runner
 
-run:
-	./a.out
+run_control:control_runner
+	./control_runner
 
 clean:
 	rm *.o; rm *.*.gch; rm a.out; rm *.*#; rm -rf *.dSYM; rm *~

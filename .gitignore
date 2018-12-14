@@ -1,0 +1,6 @@
+*~*
+*.out
+*.o
+\#*\#
+control_runner
+main_runner
